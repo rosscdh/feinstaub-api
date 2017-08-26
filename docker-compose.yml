@@ -8,9 +8,14 @@ web:
    - './manage.py'
   links:
    - db
+   - redis
   volumes:
    - .:/opt/code
   ports:
    - "8000:8000"
+
 db:
   image: postgres:9.6
+
+redis:
+  image: redis:4-alpine
